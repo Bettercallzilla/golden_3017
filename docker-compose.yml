@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  insta-api:
+    build: .
+    ports:
+      - "3017:3017"
+    environment:
+      - FOLLOW_WEBHOOK_URL=https://your.webhook/endpoint
+      - FOLLOW_POLL_INTERVAL_SECONDS=60
+    volumes:
+      - sessions:/data/sessions
+
+volumes:
+  sessions:
